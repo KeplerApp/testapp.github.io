@@ -1,0 +1,415 @@
+<!--Design and developed by : kepler team (Shailesh kumar) 27/03/2017-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    
+    <title>Kepler</title>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Material Design Bootstrap -->
+    <link href="css/compiled.min1c9b.css" rel="stylesheet">
+
+	<!-- <link href="css/compiled.min.css" rel="stylesheet">
+    <link href="css/mdb.min.css" rel="stylesheet">
+     -->
+    <!-- Your custom styles (optional) -->
+    <link href="css/style.css" rel="stylesheet">
+<style>
+	.modal-backdrop{
+	opacity:0.1;
+}
+#hover-content {
+	display: none;
+}
+
+#parent:hover+#hover-content {
+	display: block;
+	z-index: 6;
+	position: absolute;
+	background-color: #f9f9f9;
+	min-width: 140px;
+	box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px
+		rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+	padding: 12px 16px;
+}
+
+</style>
+</head>
+
+<body>	
+<nav class="navbar fixed-top navbar-toggleable-md navbar-dark scrolling-navbar mdb-color nav_color">
+		<div class="container">
+			<!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+			</button> -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="col-md-2" style="margin: -16px 0;">
+				<a class="navbar-brand" href="#">
+				   <img src="img/kepler_footer.png" class="d-inline-block align-top text-center" height="70px" alt="MDBootstrap">
+				</a>
+			</div>
+		  <div class="col-md-4">  
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item">
+                    <input type="text" name="search" placeholder="Search.."> 
+                </li>
+                
+            </ul>
+			</div>
+			
+		    <div class="col-md-6">
+			  <ul class="navbar-nav nav-flex-icons">
+                <li class="nav-item active">
+                    <a class="nav-link"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a data-toggle="modal" data-target="#myModal" class="nav-link"><i class="fa fa-envelope"></i>Message</a>
+                </li>
+                <li class="nav-item btn-group">
+                    <a data-toggle="modal" data-target="#myModal" class="nav-link"><i class="fa fa-bell"></i>Notification</a>
+                </li>
+				<li class="nav-item">
+				<a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
+                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
+                        <a class="dropdown-item">Profile</a>
+                        <a class="dropdown-item">Privacy & Setting</a>
+                        <a class="dropdown-item">Logout</a>
+                    </div>
+                </li>
+                
+			 </ul>
+			</div>
+        </div>
+    </div>
+</nav>
+<div class="container">
+      <div class="row top">
+		<div class="col-md-3">  
+			<div class="float-left card testimonial-card card_panel">
+					<!--Bacground color-->
+					<div class="card-up wallpaper">
+					</div>
+
+					<!--Avatar-->
+					<div class="avatar"><img src="img/spider.jpg" class="rounded-circle img-responsive">
+					</div>
+
+					<div class="card_block">
+						<!--Name-->
+						<h4 class="card-title"><a>Anand Prakash Gautam</a></h4>
+						
+						<hr>
+					</div>
+					<div class="profile_detail">
+							<!--Title-->
+							<p class="card-text">Anand is an android designer living in New York.</p>
+							<hr>
+							<a class="card-meta"><i class="fa fa-user"></i>83 Followers</a>
+							<p class="card-meta right">Joined in April,2017</p>
+						</div>
+				</div>
+		 </div>
+		 <div class="col-md-9">
+			 <!-- <ul class="col-md-12 col-sm-12-col-xs-12">	
+				<li class="card testimonial-card list_style">
+					<i class="fa fa-pencil-square-o font_style"></i>
+					<a href="#"><h3>2</h3></a>
+					<h6>Post</h6>
+				</li>
+				<li class="card testimonial-card list_style">
+					<i class="fa fa-plus-square font_style"></i>
+					<a href="#"><h3>2</h3></a>
+					<h6>Follow</h6>
+				</li>
+				<li class="card testimonial-card list_style">
+					<i class="fa fa-arrows font_style"></i>
+					<a href="#"><h3>2</h3></a>
+					<h6>Following</h6>
+				</li>
+				<li class="card testimonial-card list_style">
+					<i class="fa fa-arrows font_style"></i>
+					<a href="#"><h3>2</h3></a>
+					<h6>view</h6>
+				</li>
+			 </ul> -->
+			 <ul class="float-left nav nav-tabs md-pills pills-default" role="tablist">
+				<li class="nav-item">
+					<a class="nav-link active" data-toggle="tab" href="#panel11" role="tab"><i class="fa fa-user fa-2x"></i><br> Profile</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#panel12" role="tab"><i class="fa fa-heart fa-2x"></i><br> Follow</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#panel13" role="tab"><i class="fa fa-check fa-2x"></i><br> Following</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#panel14" role="tab"><i class="fa fa-envelope-open fa-2x"></i><br> My Post</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-toggle="tab" href="#panel15" role="tab"><i class="fa fa-envelope fa-2x"></i><br> Saved Post</a>
+				</li>
+			</ul>
+	<div class="tab-content">
+	   <div class="float-left col-md-8 tab-pane fade in show active" id="panel11" role="tabpanel">
+		  <div class="card card-cascade narrower">
+					<!--Card content-->
+					<div class="card-block">
+						<!--Title-->
+						<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;float:left;">
+						<a href="#" class="card-title profile_name">Anand Prakash Gautam</a>
+						<span class="timespan">4hrs ago</span><span class="point">.</span><span class="timespan">Delhi</span>
+						<br/></br>
+						<!--Text-->
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						
+					</div>
+					<!--/.Card content-->
+					<!--Card image-->
+					<div class="view overlay">
+						<img src="img/img-7.jpg" class="img-fluid" alt="">
+					</div>	
+					<div class="card-block-activity">
+						<div class="feed-footer activity">
+							<!-- like -->
+							<a class="icons"><i class="fa fa-heart-o"></i></a>
+							<span class="timespan">21</span>
+						</div>
+						<div class="activity">
+								<!--comment-->
+							<a class="icons"><i class="fa fa-comment-o"></i></a>
+							<span class="timespan">21</span>
+						</div>
+						<div class="activity">
+						<!--share-->
+						<a class="icons"><i class="fa fa-share-square-o"></i></a>
+						<span class="timespan">21</span>
+						</div>		
+					</div>
+				  </div>
+				  <div class="card card-cascade narrower">
+					<!--Card content-->
+					<div class="card-block">
+						<!--Title-->
+						<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;float:left;">
+						<a href="#" class="card-title profile_name">Anand Prakash Gautam</a>
+						<span class="timespan">4hrs ago</span><span class="point">.</span><span class="timespan">Delhi</span>
+						<br/></br>
+						<!--Text-->
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						
+					</div>
+					<!--/.Card content-->
+					<!--Card image-->
+					<div class="view overlay">
+						<img src="img/img-7.jpg" class="img-fluid" alt="">
+					</div>	
+					<div class="card-block-activity">
+						<div class="activity">
+							<!-- like -->
+							<a class="icons"><i class="fa fa-heart-o"></i></a>
+							<span class="timespan">21</span>
+						</div>
+						<div class="activity">
+								<!--comment-->
+							<a class="icons"><i class="fa fa-comment-o"></i></a>
+							<span class="timespan">21</span>
+						</div>
+						<div class="activity">
+						<!--share-->
+						<a class="icons"><i class="fa fa-share-square-o"></i></a>
+						<span class="timespan">21</span>
+						</div>		
+					</div>
+					<!--/.Card image-->
+				  </div>
+				 
+			   </div>
+			   <div class="float-left col-md-8 tab-pane fade" id="panel12" role="tabpanel">
+				 <div class="card card-cascade narrower">
+					<!--Card content-->
+					<div class="card-block">
+						<!--Title-->
+						<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;float:left;">
+						<a href="#" class="card-title profile_name">Anand Prakash Gautam</a>
+						<span class="timespan">4hrs ago</span><span class="point">.</span><span class="timespan">Delhi</span>
+						<br/></br>
+						<!--Text-->
+						<p class="card-text">Follow content</p>
+						
+					</div>
+					<!--/.Card content-->
+					<!--Card image-->
+					<div class="view overlay">
+						<img src="img/img-7.jpg" class="img-fluid" alt="">
+					</div>	
+					<div class="card-block-activity">
+						<div class="activity">
+							<!-- like -->
+							<a class="icons"><i class="fa fa-heart-o"></i></a>
+							<span class="timespan">21</span>
+						</div>
+						<div class="activity">
+								<!--comment-->
+							<a class="icons"><i class="fa fa-comment-o"></i></a>
+							<span class="timespan">21</span>
+						</div>
+						<div class="activity">
+						<!--share-->
+						<a class="icons"><i class="fa fa-share-square-o"></i></a>
+						<span class="timespan">21</span>
+						</div>		
+					</div>
+					<!--/.Card image-->
+				  </div>
+			   </div>
+			    <div class="float-left col-md-8 tab-pane fade" id="panel13" role="tabpanel">
+					<div class="card card-cascade narrower">
+					<!--Card content-->
+					<div class="card-block">
+						<!--Title-->
+						<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;float:left;">
+						<a href="#" class="card-title profile_name">Anand Prakash Gautam</a>
+						<span class="timespan">4hrs ago</span><span class="point">.</span><span class="timespan">Delhi</span>
+						<br/></br>
+						<!--Text-->
+						<p class="card-text">Following content</p>
+						
+					</div>
+					<!--/.Card content-->
+					<!--Card image-->
+					<div class="view overlay">
+						<img src="img/img-7.jpg" class="img-fluid" alt="">
+					</div>	
+					<div class="card-block-activity">
+						<div class="activity">
+							<!-- like -->
+							<a class="icons"><i class="fa fa-heart-o"></i></a>
+							<span class="timespan">21</span>
+						</div>
+						<div class="activity">
+								<!--comment-->
+							<a class="icons"><i class="fa fa-comment-o"></i></a>
+							<span class="timespan">21</span>
+						</div>
+						<div class="activity">
+						<!--share-->
+						<a class="icons"><i class="fa fa-share-square-o"></i></a>
+						<span class="timespan">21</span>
+						</div>		
+					</div>
+					<!--/.Card image-->
+				  </div>
+				</div>
+			</div>			
+		</div>	
+	</div>
+</div>
+<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
+            <a data-toggle="modal" data-target="#postmodal" class="btn-floating btn-large blue waves-effect waves-light">
+                <i class="fa fa-pencil-square-o"></i>
+            </a>
+
+            <ul>
+                <li><a class="btn-floating red waves-effect waves-light" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="fa fa-star"></i></a></li>
+                <li><a class="btn-floating yellow darken-1 waves-effect waves-light" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="fa fa-user"></i></a></li>
+                <li><a class="btn-floating green waves-effect waves-light" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="fa fa-envelope"></i></a></li>
+                <li><a class="btn-floating blue waves-effect waves-light" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="fa fa-shopping-cart"></i></a></li>
+            </ul> 
+        </div>
+
+
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title w-100" id="myModalLabel">Modal title</h4>
+            </div>
+            <!--Body-->
+            <div class="modal-body">
+                ...
+            </div>
+            <!--Footer-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- post poup start -->
+<div class="modal fadeIn" id="postmodal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <!--Content-->
+        <div class="modal-content">
+            <!--Header-->
+            <div class="modal-header">
+                <div class="col-md-2 col-sm-2 col-xs-2">	
+					<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+				</div>
+				<div class="col-md-10 col-sm-10 col-xs-10">	
+					<textarea rows="6" cols="50" placeholder="what's happening?" style="height:100px" length="40"></textarea>
+				</div>
+				<div class="row">
+					<div class="col-md-5 media">	
+						<a><i class="fa fa-camera media_type"></i></a>
+						<a><i class="fa fa-map-marker media_type"></i></a>
+					</div>
+					<div class="col-md-3">
+						<button type="button" class="btn-primary btn_post"><i class="fa fa-pencil-square-o"></i><span style="padding: 0px 11px;">Post</span></button>
+					</div>
+				</div>				
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+<!-- post popup ending -->
+
+<!--/Start your project here-->
+    <!-- SCRIPTS -->
+
+    <!-- JQuery -->
+ <script type="text/javascript" src="js/compiled.min324d.js"></script>
+	
+	<script src="js/jquery.min.js"></script> 
+	
+	<script type="text/javascript" src="js/bootstrap.js"></script>	
+	
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/tether.js"></script>
+
+    <!-- Bootstrap core JavaScript -->
+    
+	
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+	
+	
+	
+	<script>
+	$(function () {
+			$('[data-toggle="tooltip"]').tooltip()
+		});
+	</script>
+
+
+</body>
+
+			   

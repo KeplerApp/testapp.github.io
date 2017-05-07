@@ -17,7 +17,7 @@
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Material Design Bootstrap -->
-    <link href="css/compiled.min1c9b.css" rel="stylesheet">
+    <link href="https://mdbootstrap.com/wp-content/themes/mdbootstrap4/css/compiled.min.css?ver=4.3.2" rel="stylesheet">
 
 	<!-- <link href="css/compiled.min.css" rel="stylesheet">
     <link href="css/mdb.min.css" rel="stylesheet">
@@ -47,54 +47,107 @@
 </head>
 
 <body>	
-<nav class="navbar fixed-top navbar-toggleable-md navbar-dark scrolling-navbar mdb-color nav_color">
-		<div class="container">
-			<!-- <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-			</button> -->
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <div class="col-md-2" style="margin: -16px 0;">
-				<a class="navbar-brand" href="#">
-				   <img src="img/kepler_footer.png" class="d-inline-block align-top text-center" height="70px" alt="MDBootstrap">
-				</a>
-			</div>
-		  <div class="col-md-4">  
-			<ul class="navbar-nav mr-auto">
-				<li class="nav-item">
-                    <input type="text" name="search" placeholder="Search.."> 
-                </li>
+<header>
+        <!-- Sidebar navigation -->
+        <ul id="slide-out" class="side-nav fixed sn-bg-1 custom-scrollbar">
+            <!-- Dp -->
+            <li>
+                <div class="avatar center"><img src="img/spider.jpg" class="rounded-circle img-responsive">
+					</div>
+            </li>
+            <!--/ Dp -->
+            <!--profile name-->
+            <li>
+                <h4><a href="profile.html" class="avatar_detail">Anand Prakash Gautam</a></h4>
+            </li>
+            
+            <!-- Side navigation links -->
+            <li>
+                <ul class="collapsible collapsible-accordion">
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-user"></i> Profile </a>
+                       <!--  <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#" class="waves-effect">Submit listing</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">Registration form</a>
+                                </li>
+                            </ul>
+                        </div> -->
+                    </li>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-comment-o"></i> Message</a>
+                        <!-- <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#" class="waves-effect">For bloggers</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">For authors</a>
+                                </li>
+                            </ul>
+                        </div> -->
+                    </li>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-envelope"></i> Feedback</a>
+                    </li>
+                    <li><a class="collapsible-header waves-effect arrow-r"><i class="fa fa-sign-out"></i> logout</a>
+                        <!-- <div class="collapsible-body">
+                            <ul>
+                                <li><a href="#" class="waves-effect">FAQ</a>
+                                </li>
+                                <li><a href="#" class="waves-effect">Write a message</a>
+                                </li>
+                            </ul>
+                        </div> -->
+                    </li>
+                </ul>
+            </li>
+            <!--/. Side navigation links -->
+            <div class="sidenav-bg mask-strong"></div>
+        </ul>
+        <!--/. Sidebar navigation -->
+
+        <!-- Navbar -->
+      <nav class="navbar fixed-top navbar-toggleable-md navbar-dark theme_color scrolling-navbar double-nav">
+				<button class="navbar-toggler navbar-toggler-right button-collapse collapsed sidenav_view" type="button" data-activates="slide-out"  aria-controls="navbarNav4" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon "></span>
+                </button>
+            <!-- <div class="float-xs-left">
+                <a href="#" data-activates="slide-out" class="button-collapse">
+				<i class="fa fa-bars"></i></a>
+            </div> -->
+           
+            <div class="col-md-2 breadcrumb-dn mr-auto">
                 
-            </ul>
-			</div>
+				<a class="navbar-brand" href="#" style="margin-top:-22px;">
+				   <img src="img/kepler_footer.png" class="d-inline-block align-top text-center" height="70px" alt="Kepler">
+				</a>
 			
-		    <div class="col-md-6">
-			  <ul class="navbar-nav nav-flex-icons">
-                <li class="nav-item active">
-                    <a class="nav-link"><i class="fa fa-home"></i>Home <span class="sr-only">(current)</span></a>
+            </div>
+			<div class="col-md-4 nav-item" style="margin: auto;">
+                    <input type="text" name="search" class="search_box" placeholder="Search..">
+            </div>
+            <ul class="col-md-4 nav navbar-nav ml-auto flex-row">
+                <li class="nav-item">
+                    <a class="nav-link"><i class="fa fa-home"></i> <span class="hidden-sm-down">Home</span></a>
                 </li>
                 <li class="nav-item">
-                    <a data-toggle="modal" data-target="#myModal" class="nav-link"><i class="fa fa-envelope"></i>Message</a>
+                    <a class="nav-link"><i class="fa fa-envelope-o"></i> <span class="hidden-sm-down">Message</span></a>
                 </li>
-                <li class="nav-item btn-group">
-                    <a data-toggle="modal" data-target="#myModal" class="nav-link"><i class="fa fa-bell"></i>Notification</a>
+                <li class="nav-item">
+                    <a data-toggle="modal" data-target="#centralModalInfo" class="nav-link"><i class="fa fa-bell"></i><span class="hidden-sm-down">Notification</span></a>
                 </li>
-				<li class="nav-item">
-				<a class="nav-link dropdown-toggle" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></a>
-                   <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu1">
-                        <a class="dropdown-item">Profile</a>
-                        <a class="dropdown-item">Privacy & Setting</a>
-                        <a class="dropdown-item">Logout</a>
-                    </div>
-                </li>
-                
-			 </ul>
-			</div>
-        </div>
-    </div>
-</nav>
+				<li class="nav-item avatar dropdown mobile_view">
+                 <a class="nav-link dropdown-toggle waves-effect waves-light" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="img/spider.jpg" class="img-fluid rounded-circle z-depth-0"></a>
+									<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                                        <a class="dropdown-item waves-effect waves-light" href="#">Privacy</a>
+                                        <a class="dropdown-item waves-effect waves-light" href="#">Settings</a>
+                                        <a class="dropdown-item waves-effect waves-light" href="#">Logout</a>
+                                    </div>                                       
+                 </li>  
+            </ul>
+        </nav> 
+        <!-- /.Navbar -->
+    </header>
 <div class="container">
       <div class="row top">
-		<div class="col-md-3">  
+		<div class="col-md-3 mobile_view">  
 			<div class="float-left card testimonial-card card_panel">
 					<!--Bacground color-->
 					<div class="card-up wallpaper">
@@ -381,19 +434,121 @@
     </div>
 </div>
 <!-- post popup ending -->
+<!-- Central Modal Medium Info -->
+<div class="modal fade right" id="centralModalInfo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-full-height modal-right" role="document">
+        <!--Content-->
+        <div class="modal-content" style="height:800px;overflow-y:auto;">
+            <!--Header-->
+            <div class="modal-header">
+                <p class="heading lead"><i class="fa fa-bell"></i>Notification</p>
 
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                </button>
+            </div>
+
+            <!--Body-->
+            <ul class="flex-column align-items-start"> 
+				  <li class="boxing_model"> 
+					 <a>	 
+						 <div class="col-md-2 col-sm-2 col-xs-2">	
+							<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+						 </div>
+						 <div class="col-md-10 col-sm-10 col-xs-10">
+							<div class="d-flex w-100 justify-content-between">
+								<p class="mb-1">Shailesh kumar starts following you ghg.Shailesh kumar starts following you ghg</p>
+								<small>just now</small>
+							</div>
+						 </div>
+					 </a>
+				  </li>
+<li class="boxing_model"> 
+					 <a>	 
+						 <div class="col-md-2 col-sm-2 col-xs-2">	
+							<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+						 </div>
+						 <div class="col-md-10 col-sm-10 col-xs-10">
+							<div class="d-flex w-100 justify-content-between">
+								<p class="mb-1">Shailesh kumar starts following you ghg.Shailesh kumar starts following you ghg</p>
+								<small>just now</small>
+							</div>
+						 </div>
+					 </a>
+				  </li>
+<li class="boxing_model"> 
+					 <a>	 
+						 <div class="col-md-2 col-sm-2 col-xs-2">	
+							<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+						 </div>
+						 <div class="col-md-10 col-sm-10 col-xs-10">
+							<div class="d-flex w-100 justify-content-between">
+								<p class="mb-1">Shailesh kumar starts following you ghg.Shailesh kumar starts following you ghg</p>
+								<small>just now</small>
+							</div>
+						 </div>
+					 </a>
+				  </li>
+<li class="boxing_model"> 
+					 <a>	 
+						 <div class="col-md-2 col-sm-2 col-xs-2">	
+							<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+						 </div>
+						 <div class="col-md-10 col-sm-10 col-xs-10">
+							<div class="d-flex w-100 justify-content-between">
+								<p class="mb-1">Shailesh kumar starts following you ghg.Shailesh kumar starts following you ghg</p>
+								<small>just now</small>
+							</div>
+						 </div>
+					 </a>
+				  </li>				  
+			</ul>
+        </div>
+        <!--/.Content-->
+     </div>
+  </div>
+<!-- Central Modal Medium Info-->
+
+<!-- bottom mode section start-->
+<div class="modal fade bottom" id="frameModalBottom" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-frame modal-bottom" role="document">
+		<!--Content-->
+        <div class="modal-content" style="margin:0 36%">
+            <!--Body-->
+            <div class="modal-body">
+			    <ul class="float-left nav nav-tabs md-pills pills-default" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#panel11" role="tab"><i class="fa fa-envelope fa-2x mb-1 animated rotateIn"></i><br> Save</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#panel11" role="tab"><i class="fa fa-pencil-square-o fa-2x mb-1 animated rotateIn"></i><br> Edit</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" data-toggle="tab" href="#panel11" role="tab"><i class="fa fa-trash-o fa-2x mb-1 animated rotateIn"></i><br> Delete</a>
+					</li>
+				</ul>
+                <!-- <div class="text-center">
+                    <i class="fa fa-check fa-4x mb-1 animated rotateIn"></i>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla aperiam blanditiis ad 	consequatur in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga, enim,
+                        ab officiis totam.</p>
+                </div> -->
+            </div>
+        </div>
+	</div>
+</div>	
 <!--/Start your project here-->
     <!-- SCRIPTS -->
 
     <!-- JQuery -->
  <script type="text/javascript" src="js/compiled.min324d.js"></script>
-	
-	<script src="js/jquery.min.js"></script> 
-	
+	<script type='text/javascript' src='https://mdbootstrap.com/wp-includes/js/jquery/jquery.js?ver=1.12.4'></script>
+
+
 	<script type="text/javascript" src="js/bootstrap.js"></script>	
-	
-    <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/tether.js"></script>
+	<script src="js/jqueryb8ff.js"></script> 
+	<script type='text/javascript' src='https://mdbootstrap.com/wp-includes/js/jquery/jquery-migrate.min.js?ver=1.4.1'></script>
+	<script src="js/ajax-auth-script.js"></script> 
+	<script type="text/javascript" src="js/tweetie.min.js"></script>
 
     <!-- Bootstrap core JavaScript -->
     
@@ -407,6 +562,11 @@
 	$(function () {
 			$('[data-toggle="tooltip"]').tooltip()
 		});
+	$(".button-collapse").sideNav();
+        
+    var el = document.querySelector('.custom-scrollbar');
+    Ps.initialize(el);
+   	
 	</script>
 
 

@@ -248,6 +248,9 @@ body{
 		}	
 .modal_bg_opacity{
 		background:rgba(0, 0, 0, 0.45);
+		}	
+.modal_responsive_width{
+		width:375px !important;
 		}		
 }	
 		

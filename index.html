@@ -213,16 +213,20 @@
 				</a>
 			
             </div>
-			<div class="col-md-4 nav-item" style="margin: auto;">
-                    <input list="suggestions" type="text" name="search" class="search_box" placeholder="Search..">
-					<datalist id="suggestions">
-						<option value="Shailesh kumar">
-						<option value="sunil jha">
-						<option value="Anand gautam">
-						<option value="jadoo">
-						<option value="ujjwal">
-					</datalist>
-            </div>
+			<div class="col-md-4 nav-item">
+                    <!-- <input list="suggestions" type="text" name="search" class="search_box" placeholder="Search..">
+					-->
+				<div class="md-form" style="margin-bottom:0px">
+					<input type="search" id="form-autocomplete" class="form-control mdb-autocomplete white-text">
+					<button class="mdb-autocomplete-clear">
+						<svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="https://www.w3.org/2000/svg">
+							<path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
+							<path d="M0 0h24v24H0z" fill="none" />
+						</svg>
+					</button>
+					<label for="form-autocomplete" class="active white-text">Search People</label>
+				</div>	
+			</div>
             <ul class="col-md-4 nav navbar-nav ml-auto flex-row">
                 <li class="nav-item">
                     <a class="nav-link"><i class="fa fa-home"></i> <span class="hidden-sm-down">Home</span></a>
@@ -322,10 +326,12 @@
 					<div class="card-block">
 						<!--Title-->
 						<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;float:left;">
-						&nbsp;&nbsp;
+						&nbsp;
 						<a href="#" class="card-title profile_name">Anand Prakash Gautam</a>
 						<span class="timespan">4hrs ago</span><span class="point">.</span><span class="timespan">Delhi</span>
+						<a data-toggle="modal" data-target="#frameModalBottom" class="btn-floating toggle-action right"><i class="fa fa-chevron-down black-text toggle_icon"></i></a>
 						<br/></br>
+						
 						<!--Text-->
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 						
@@ -338,22 +344,61 @@
 					<div class="card-block-activity">
 						<div class="activity">
 							<!-- like -->
-							<a class="icons"><i class="fa fa-heart-o"></i></a>
-							<span class="timespan">21</span>
+							<a class="icons"><i class="fa fa-heart-o" data-toggle="tooltip" data-placement="bottom" title="like"></i></a>
+							<span class="timespan"><a href="#" id="show_liker">21</a></span>
 						</div>
 						<div class="activity">
-							<!--comment-->
-							<a class="icons"><i class="fa fa-comment-o"></i></a>
+								<!--comment-->
+							<span data-toggle="tooltip" data-placement="bottom" title="comment"><a class="icons"><i class="fa fa-comment-o" data-toggle="collapse" data-target="#collapseExample"></i></a></span>
 							<span class="timespan">21</span>
 						</div>
 						<div class="activity">
 						<!--share-->
-						<a class="icons"><i class="fa fa-share-square-o"></i></a>
+						<a class="icons popup-text" href="#" id="show_login">
+						  <i class="fa fa-share-square-o" data-toggle="tooltip" data-placement="bottom" title="share"></i>
+						</a>
 						<span class="timespan">21</span>
-						</div>		
+						</div>
+						<div class="col-xs-2">	
+								<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+							</div>
+							<div class="col-xs-10">	
+								<input type="text" placeholder="write a comment..." data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+							</div>
+							<hr>
 					</div>
+					
+					<div class="collapse" id="collapseExample" style="margin-top:20%;">
+								<div class="list-group-item-action flex-column align-items-start">
+										<div class="col-xs-2">	
+											<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+										</div>
+										<div class="col-xs-10">
+											<div class="d-flex w-100 justify-content-between">
+												<a href="#" class="card-title profile_name">Shailesh kumar</a>
+												<small>3 days ago</small>
+											</div>
+											<p class="mb-1 justify">chl be chl chl be chl chl be chl chl be chl chl be chl chl be chl!!!...</p>
+											<hr>
+										</div>
+								
+										<div class="col-xs-2">	
+											<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+										</div>
+										<div class="col-xs-10">
+											<div class="d-flex w-100 justify-content-between">
+												<a href="#" class="card-title profile_name">Shailesh kumar</a>
+												<small>3 days ago</small>
+											</div>
+											<p class="mb-1 justify">chl be chl chl be chl chl be chl chl be chl chl be chl chl be chl!!!...</p>
+											<hr>
+										</div>
+									</div> 
+								
+							</div>	
 					<!--/.Card image-->
 				  </div>
+				  
 				  <div class="card card-cascade narrower">
 					<!--Card content-->
 					<div class="card-block">
@@ -362,7 +407,7 @@
 						&nbsp;
 						<a href="#" class="card-title profile_name">Anand Prakash Gautam</a>
 						<span class="timespan">4hrs ago</span><span class="point">.</span><span class="timespan">Delhi</span>
-						<a data-toggle="modal" data-target="#frameModalBottom" class="btn-floating toggle-action right"><i class="fa fa-chevron-down"></i></a>
+						<a data-toggle="modal" data-target="#frameModalBottom" class="btn-floating toggle-action right"><i class="fa fa-chevron-down black-text toggle_icon"></i></a>
 						<br/></br>
 						
 						<!--Text-->
@@ -437,10 +482,12 @@
 					<div class="card-block">
 						<!--Title-->
 						<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;float:left;">
-						&nbsp;&nbsp;
+						&nbsp;
 						<a href="#" class="card-title profile_name">Anand Prakash Gautam</a>
 						<span class="timespan">4hrs ago</span><span class="point">.</span><span class="timespan">Delhi</span>
+						<a data-toggle="modal" data-target="#frameModalBottom" class="btn-floating toggle-action right"><i class="fa fa-chevron-down black-text toggle_icon"></i></a>
 						<br/></br>
+						
 						<!--Text-->
 						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 						
@@ -453,20 +500,58 @@
 					<div class="card-block-activity">
 						<div class="activity">
 							<!-- like -->
-							<a class="icons"><i class="fa fa-heart-o"></i></a>
-							<span class="timespan">21</span>
+							<a class="icons"><i class="fa fa-heart-o" data-toggle="tooltip" data-placement="bottom" title="like"></i></a>
+							<span class="timespan"><a href="#" id="show_liker">21</a></span>
 						</div>
 						<div class="activity">
 								<!--comment-->
-							<a class="icons"><i class="fa fa-comment-o"></i></a>
+							<span data-toggle="tooltip" data-placement="bottom" title="comment"><a class="icons"><i class="fa fa-comment-o" data-toggle="collapse" data-target="#collapseExample"></i></a></span>
 							<span class="timespan">21</span>
 						</div>
 						<div class="activity">
 						<!--share-->
-						<a class="icons" href="#search-dialog" data-effect="mfp-zoom-out"><i class="fa fa-share-square-o"></i></a>
+						<a class="icons popup-text" href="#" id="show_login">
+						  <i class="fa fa-share-square-o" data-toggle="tooltip" data-placement="bottom" title="share"></i>
+						</a>
 						<span class="timespan">21</span>
-						</div>		
+						</div>
+						<div class="col-xs-2">	
+								<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+							</div>
+							<div class="col-xs-10">	
+								<input type="text" placeholder="write a comment..." data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+							</div>
+							<hr>
 					</div>
+					
+					<div class="collapse" id="collapseExample" style="margin-top:20%;">
+								<div class="list-group-item-action flex-column align-items-start">
+										<div class="col-xs-2">	
+											<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+										</div>
+										<div class="col-xs-10">
+											<div class="d-flex w-100 justify-content-between">
+												<a href="#" class="card-title profile_name">Shailesh kumar</a>
+												<small>3 days ago</small>
+											</div>
+											<p class="mb-1 justify">chl be chl chl be chl chl be chl chl be chl chl be chl chl be chl!!!...</p>
+											<hr>
+										</div>
+								
+										<div class="col-xs-2">	
+											<img src="img/spider.jpg" style="height:50px;width:50px;border-radius: 27px;">	
+										</div>
+										<div class="col-xs-10">
+											<div class="d-flex w-100 justify-content-between">
+												<a href="#" class="card-title profile_name">Shailesh kumar</a>
+												<small>3 days ago</small>
+											</div>
+											<p class="mb-1 justify">chl be chl chl be chl chl be chl chl be chl chl be chl chl be chl!!!...</p>
+											<hr>
+										</div>
+									</div> 
+								
+							</div>	
 					<!--/.Card image-->
 				  </div>
 				  
@@ -706,9 +791,20 @@
         
     var el = document.querySelector('.custom-scrollbar');
     Ps.initialize(el);
-   
-	
-	</script>
+ </script>
+ <script>
+    var users = [
+        "Shailesh",
+        "Sunil",
+		"Jadoo",
+		"Anand",
+		"Ujjwal"
+    ];
+
+    $('.mdb-autocomplete').mdb_autocomplete({
+        data: users
+    });
+    </script>
 </body>
 
 			   

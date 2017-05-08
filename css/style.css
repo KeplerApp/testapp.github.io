@@ -202,7 +202,15 @@ body{
 			}	
 .modal_option{
 		margin:0 36%;
-		}			
+		}	
+.double-nav{
+		color:#000000 !important;
+		}
+.toggle_icon{
+			font-size:1rem !important;
+			line-height:28px !important;
+			}		
+	
 /* .justify-content-between {
     -webkit-box-pack: justify!important;
     -webkit-justify-content: space-between!important;
